@@ -1,4 +1,4 @@
-export default function Home(name, lastName, fullName,) {
+export default function Home() {
   return (
     <>
       <div className='bg-red-500'>
