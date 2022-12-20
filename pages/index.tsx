@@ -9,7 +9,7 @@ export default function Home() {
   return (
     <main className="relative h-screen overflow-y-scroll">
       <Header setQuery={setQuery}/>
-      <Hero/>
+      {/* <Hero/> */}
     </main>
   )
 }
