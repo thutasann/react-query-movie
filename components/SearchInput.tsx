@@ -1,5 +1,6 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import Image from 'next/image';
+import { useRouter } from 'next/router';
 
 type Props = {
     setQuery: React.Dispatch<React.SetStateAction<string>>;
@@ -8,7 +9,8 @@ type Props = {
 const TIME = 300;
 
 function SearchQuery({ setQuery  } : Props) {
-
+    
+    const router = useRouter();
     const [ text, setText ] = React.useState('');
     const timer = React.useRef<NodeJS.Timeout>();
 
@@ -17,6 +19,12 @@ function SearchQuery({ setQuery  } : Props) {
         clearTimeout(timer.current);
 
         setText(value);
+
+        if(value){
+            router.push(`?search=${value}`)
+        } else{
+            router.push('/');
+        }
 
         timer.current = setTimeout(() => {
             setQuery(value);
