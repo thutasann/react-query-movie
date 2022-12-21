@@ -15,7 +15,7 @@ export const basicFetch = async <returnType>(endpoint: string): Promise<returnTy
 
 
 /** 
- * Fetch Fucntions
+ * Fetch Fucntions For Client Side
  */
 export const fetchMovies = async(search = '', page = 1) : Promise<Movies> => {
     return await basicFetch<Movies>(`/api/movies?search=${search}&page=${page}`);
